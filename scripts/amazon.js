@@ -102,13 +102,13 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
         quantity: 1,
       });
     }
-    // if (existingProduct) {
-    //   console.log("product found");
-    //   console.log(existingProduct);
-    // } else {
-    //   console.log("we must add to cart");
-    // }
 
+    let cartQuantity = cart.reduce((acc, curr) => {
+      acc += curr.quantity;
+      return acc;
+    }, 0);
+    document.querySelector(".cart-quantity").textContent = cartQuantity;
     console.log(cart);
+    console.log(cartQuantity);
   });
 });
